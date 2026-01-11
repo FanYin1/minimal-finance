@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ======================================
+   极简金融主题全局样式
+   ====================================== */
+
+@layer base {
+  :root {
+    /* 极简主题色变量 */
+    --color-primary: 17 24 39;
+    --color-secondary: 107 114 128;
+    
+    /* 文本颜色 */
+    --color-foreground: 17 24 39;
+    --color-foreground-muted: 156 163 175;
+    
+    /* 背景颜色 */
+    --color-background: 249 250 251;
+    --color-background-alt: 255 255 255;
+    
+    /* 边框颜色 */
+    --color-border: 229 231 235;
+  }
+
+  /* 全局默认样式 */
+  * {
+    @apply border-gray-200;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-bg-base text-text-main antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 标题样式 - 极简风格 */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl lg:text-8xl;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  /* 图片响应式 */
+  img {
+    @apply max-w-full h-auto;
+  }
+}
+
+/* ======================================
+   组件样式
+   ====================================== */
+
+@layer components {
+  /* 极简卡片样式 */
+  .minimal-card {
+    @apply bg-white rounded-3xl p-12 transition-all duration-500 border border-gray-50;
+  }
+
+  .minimal-card:hover {
+    @apply -translate-y-1 shadow-hover;
+  }
+
+  /* 极简按钮 */
+  .btn-minimal {
+    @apply inline-flex items-center justify-center px-10 py-4 bg-black text-white rounded-full 
+           font-medium transition-all duration-300 hover:bg-gray-900 hover:scale-[1.02] hover:shadow-lg;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-outline-minimal {
+    @apply inline-flex items-center justify-center px-10 py-4 bg-transparent text-black 
+           border border-gray-200 rounded-full font-medium transition-all duration-300 
+           hover:border-black hover:bg-white;
+  }
+
+/* ======================================
+   工具类
+   ====================================== */
+
+@layer utilities {
+  /* 文本渐变 */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-500;
+  }
+
+  /* 背景渐变 */
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700;
+  }
+
+  .bg-gradient-secondary {
+    @apply bg-gradient-to-r from-secondary-500 to-secondary-600;
+  }
+
+  /* 玻璃态效果 */
+  .glass {
+    @apply bg-white/80 backdrop-blur-lg;
+  }
+
+  /* 隐藏滚动条 */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 文本截断 */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* 动画延迟 */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}

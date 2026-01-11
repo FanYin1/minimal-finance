@@ -1,0 +1,36 @@
+export function Hero() {
+  return (
+    <section className="pt-32 pb-20 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* 顶部标签 */}
+          <p className="text-sm font-medium tracking-widest text-gray-500 mb-6 uppercase">
+            Professional Financial Services
+          </p>
+
+          {/* 主标题 */}
+          <h1 className="text-5xl md:text-8xl text-text-main mb-8">
+            让资金流动
+            <br />
+            回归简单
+          </h1>
+
+          {/* 描述 */}
+          <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+            我们剥离了繁琐的中间环节，为您提供最直接、最高效的企业融资与个人信贷咨询服务。
+          </p>
+
+          {/* 按钮组 */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contact" className="btn-minimal">
+              开始咨询
+            </a>
+            <a href="#services" className="btn-outline-minimal">
+              了解流程
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
