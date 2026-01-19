@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import { ComplianceNotice } from '@/components/ui/ComplianceNotice';
 
 export const metadata: Metadata = {
-  title: '个人信贷 | 浦汇网',
-  description: '纯信用无抵押个人贷款，依据公积金、社保等个人资质申请，极速审批，灵活还款，最低利率3.6%起',
+  title: '个人资金规划与信贷评估 | 浦汇咨询',
+  description: '基于公积金、社保、收入和现有负债，评估个人信贷可行性，提供材料梳理与产品解读',
 };
 
 const products = [
@@ -37,10 +38,10 @@ const products = [
 ];
 
 const advantages = [
-  { title: '无需抵押', desc: '纯信用贷款，无需任何抵押物' },
-  { title: '极速审批', desc: '线上提交，最快10分钟出结果' },
-  { title: '灵活还款', desc: '等额本息、先息后本任选' },
-  { title: '专属服务', desc: '1对1顾问全程跟踪服务' },
+  { title: '全面评估', desc: '基于收入、负债、资产的全面分析' },
+  { title: '产品解读', desc: '帮助您看懂产品条款和真实成本' },
+  { title: '材料梳理', desc: '提供申请材料清单与优化建议' },
+  { title: '专属咨询', desc: '1对1 顾问服务，解答您的所有疑问' },
 ];
 
 export default function PersonalLoanPage() {
@@ -53,12 +54,12 @@ export default function PersonalLoanPage() {
             个人信贷
           </span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            借款更简单
+            看清成本
             <br />
-            生活更自在
+            明智决策
           </h1>
           <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
-            无需抵押，极速放款。我们根据您的个人资质，为您匹配最优的贷款方案。
+            基于您的个人资质，提供信贷可行性评估、产品对比分析和材料梳理建议，帮助您看懂真实成本，做出更合理的选择。
           </p>
         </div>
       </section>
@@ -79,18 +80,13 @@ export default function PersonalLoanPage() {
                     </span>
                   </div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold">{product.amount}</div>
-                    <div className="text-sm text-gray-400">最高额度</div>
+                    <div className="text-lg font-bold text-gray-600">{product.highlight}</div>
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold mb-3">{product.title}</h3>
-                <p className="text-gray-500 leading-relaxed mb-4">
+                <p className="text-gray-500 leading-relaxed">
                   {product.description}
                 </p>
-                <div className="pt-4 border-t border-gray-100">
-                  <span className="text-sm text-gray-400">年化利率</span>
-                  <span className="text-lg font-bold ml-2">{product.rate}</span>
-                </div>
               </div>
             ))}
           </div>
@@ -116,6 +112,9 @@ export default function PersonalLoanPage() {
           </div>
         </div>
       </section>
+
+      {/* 合规声明 */}
+      <ComplianceNotice />
     </main>
   );
 }

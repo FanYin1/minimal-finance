@@ -10,6 +10,7 @@ const navigation = [
   { name: '企业融资', href: '/business' },
   { name: '个人信贷', href: '/personal' },
   { name: '债务优化', href: '/debt' },
+  { name: '合规声明', href: '/compliance' },
   { name: '关于我们', href: '/about' },
 ];
 
@@ -45,7 +46,7 @@ export function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
               <div className="w-6 h-6 bg-black rounded-full" />
-              <span className="text-lg font-bold tracking-tight">浦汇网</span>
+              <span className="text-lg font-bold tracking-tight">浦汇咨询</span>
             </Link>
 
             {/* Desktop Navigation */}

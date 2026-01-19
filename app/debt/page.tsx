@@ -1,30 +1,31 @@
 import type { Metadata } from 'next';
+import { ComplianceNotice } from '@/components/ui/ComplianceNotice';
 
 export const metadata: Metadata = {
-  title: '债务优化 | 浦汇网',
-  description: '停止以贷养贷，科学规划债务结构，降低月供压力，帮您重塑信用生活，平均减负40%',
+  title: '债务管理与还款规划咨询 | 浦汇咨询',
+  description: '对多头负债进行结构梳理和成本测算，设计合规还款方案，帮助识别风险条款',
 };
 
 const services = [
   {
     icon: '📉',
-    title: '降低月供',
-    description: '通过债务重组，有效降低每月还款压力，平均减负40%',
+    title: '负债结构梳理',
+    description: '对多头负债进行全面梳理和成本测算，帮助您看清真实债务情况',
   },
   {
     icon: '🔄',
-    title: '债务整合',
-    description: '将多笔负债整合为一笔，简化还款流程',
+    title: '还款方案设计',
+    description: '设计多种合规前提下的还款节奏与顺序建议',
   },
   {
     icon: '📈',
-    title: '信用修复',
-    description: '科学规划还款，逐步修复个人征信',
+    title: '合同条款解读',
+    description: '帮助识别合同中的高成本条款和潜在风险',
   },
   {
     icon: '🛡️',
-    title: '法律援助',
-    description: '专业法律团队，处理债务纠纷',
+    title: '风险防范提醒',
+    description: '提醒防范违法催收等行为，提供投诉渠道信息',
   },
 ];
 
@@ -45,32 +46,32 @@ export default function DebtOptimizationPage() {
             债务优化
           </span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            轻装前行
+            梳理负债
             <br />
-            重塑信用生活
+            科学规划
           </h1>
           <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
-            停止以贷养贷的恶性循环。我们帮您科学规划债务结构，降低还款压力，重建健康的财务状况。
+            我们帮助您全面梳理债务结构，测算真实成本，设计合理的还款方案，帮助您逐步恢复健康的财务状况。
           </p>
         </div>
       </section>
 
-      {/* 核心数据 */}
+      {/* 服务优势 */}
       <section className="px-6 py-16">
         <div className="max-w-7xl mx-auto">
           <div className="bg-gradient-to-br from-gray-900 to-black text-white rounded-[40px] p-12 md:p-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
               <div>
-                <div className="text-5xl md:text-6xl font-bold mb-3">40%</div>
-                <div className="text-gray-400">平均月供减负</div>
+                <div className="text-5xl md:text-6xl font-bold mb-3">科学</div>
+                <div className="text-gray-400">债务梳理与分析</div>
               </div>
               <div>
-                <div className="text-5xl md:text-6xl font-bold mb-3">5000+</div>
-                <div className="text-gray-400">成功案例</div>
+                <div className="text-5xl md:text-6xl font-bold mb-3">专业</div>
+                <div className="text-gray-400">还款方案设计</div>
               </div>
               <div>
-                <div className="text-5xl md:text-6xl font-bold mb-3">100%</div>
-                <div className="text-gray-400">隐私保护</div>
+                <div className="text-5xl md:text-6xl font-bold mb-3">严格</div>
+                <div className="text-gray-400">隐私保护机制</div>
               </div>
             </div>
           </div>
@@ -143,6 +144,9 @@ export default function DebtOptimizationPage() {
           </div>
         </div>
       </section>
+
+      {/* 合规声明 */}
+      <ComplianceNotice />
     </main>
   );
 }

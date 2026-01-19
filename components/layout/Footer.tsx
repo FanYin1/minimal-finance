@@ -12,7 +12,7 @@ export function Footer() {
             {/* Logo */}
             <div className="flex items-center space-x-2">
               <div className="w-4 h-4 bg-black rounded-full" />
-              <span className="font-bold">浦汇网</span>
+              <span className="font-bold">浦汇咨询</span>
             </div>
 
             {/* 导航链接 */}
@@ -25,6 +25,9 @@ export function Footer() {
               </Link>
               <Link href="/debt" className="text-gray-500 hover:text-black transition-colors">
                 债务优化
+              </Link>
+              <Link href="/compliance" className="text-gray-500 hover:text-black transition-colors">
+                合规声明
               </Link>
               <Link href="/about" className="text-gray-500 hover:text-black transition-colors">
                 关于我们
@@ -56,11 +59,11 @@ export function Footer() {
         </div>
       </div>
 
-      {/* 免责声明 */}
+      {/* 合规声明 */}
       <div className="bg-gray-50 py-6">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-xs text-gray-400 text-center leading-relaxed">
-            浦汇网是贷款信息咨询平台，不是放贷机构。产品信息来自合作金融机构，仅供参考。我们可能从成功推荐中获取佣金。贷款需谨慎，请根据自身能力合理借贷。
+            上海辰永翊信息服务有限公司仅提供资金规划、债务管理和相关信息咨询服务，不直接放贷、不提供担保服务。所有贷款由持牌金融机构独立审批。请根据自身能力谨慎借贷。
           </p>
         </div>
       </div>
@@ -70,7 +73,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400">
             <div>
-              &copy; {currentYear} 浦汇网 All rights reserved.
+              &copy; {currentYear} 上海辰永翊信息服务有限公司 All rights reserved.
             </div>
             <div className="flex items-center space-x-6">
               <Link href="/privacy" className="hover:text-gray-600 transition-colors">

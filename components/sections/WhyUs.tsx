@@ -1,13 +1,13 @@
 const highlights = [
-  '银行级数据加密，隐私绝对安全',
-  '不成功不收费，透明无隐形消费',
-  '1对1 专属顾问，全程跟踪服务',
+  '资金与负债全景诊断，帮助您看清真实综合成本',
+  '基于政策和机构公开规则，提供多种资金路径对比建议',
+  '一对一顾问服务，全流程解释说明，帮助您减少信息差',
 ];
 
 const stats = [
-  { value: '50+', label: '合作机构' },
-  { value: '98%', label: '审批通过率' },
-  { value: '10亿+', label: '累计协助放款', colSpan: true },
+  { value: '专业', label: '咨询团队' },
+  { value: '透明', label: '服务流程' },
+  { value: '严格', label: '信息安全管理', colSpan: true },
 ];
 
 export function WhyUs() {
@@ -25,7 +25,7 @@ export function WhyUs() {
                 为什么选择我们？
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-10 font-light">
-                在复杂的金融市场中，我们坚持做最简单的事：为您匹配最适合的资金方，节省您的时间与成本。
+                在复杂的金融市场中，我们提供专业的信息咨询服务，帮助您理清资金需求与债务结构，看懂金融产品的真实成本，做出更明智的决策。
               </p>
 
               {/* 亮点列表 */}

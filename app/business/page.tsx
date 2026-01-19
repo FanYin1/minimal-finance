@@ -1,38 +1,39 @@
 import type { Metadata } from 'next';
+import { ComplianceNotice } from '@/components/ui/ComplianceNotice';
 
 export const metadata: Metadata = {
-  title: '企业融资 | 浦汇网',
-  description: '专为中小企业设计的融资解决方案，基于税务、发票数据，提供无抵押信用贷款，最高额度500万',
+  title: '企业融资规划服务 | 浦汇咨询',
+  description: '为中小企业提供融资规划与路径设计服务，基于税务、发票等数据评估融资可行性，提供材料准备与优化建议',
 };
 
 const features = [
   {
     icon: '📊',
-    title: '税贷融资',
-    description: '基于企业纳税记录，无需抵押担保，最高可贷500万',
+    title: '税务数据评估',
+    description: '基于企业纳税记录，评估融资可行性与风险，提供路径建议',
   },
   {
     icon: '📄',
-    title: '发票融资',
-    description: '依托发票数据评估，快速获取经营周转资金',
+    title: '发票流水分析',
+    description: '依托发票数据进行经营情况评估，设计融资方案',
   },
   {
     icon: '🏢',
-    title: '经营贷款',
-    description: '针对持续经营企业，提供长期稳定的资金支持',
+    title: '融资路径设计',
+    description: '针对企业情况，提供多种融资渠道对比与分析',
   },
   {
     icon: '⚡',
-    title: '极速审批',
-    description: '线上提交资料，最快24小时内出审批结果',
+    title: '材料优化建议',
+    description: '提供申请材料清单与优化建议，提高沟通效率',
   },
 ];
 
 const requirements = [
-  '企业成立满1年以上',
-  '有正常的纳税记录或发票流水',
-  '企业法人征信良好',
-  '有实际经营场所',
+  '企业成立并持续经营中',
+  '有纳税记录或发票流水可供分析',
+  '企业法人愿意提供相关资料',
+  '有明确的融资需求与规划',
 ];
 
 export default function BusinessFinancePage() {
@@ -45,12 +46,12 @@ export default function BusinessFinancePage() {
             企业融资
           </span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            为企业注入
+            为企业提供
             <br />
-            发展动力
+            融资规划服务
           </h1>
           <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
-            我们深耕企业金融服务多年，为中小企业提供便捷、高效的融资解决方案，助力企业稳健发展。
+            我们基于企业经营数据，提供融资路径设计与可行性分析，帮助中小企业看清融资选择，优化申请材料，提高与持牌金融机构的沟通效率。
           </p>
         </div>
       </section>
@@ -77,39 +78,35 @@ export default function BusinessFinancePage() {
         </div>
       </section>
 
-      {/* 核心数据 */}
+      {/* 服务优势 */}
       <section className="px-6 py-16">
         <div className="max-w-7xl mx-auto">
           <div className="bg-black text-white rounded-[40px] p-12 md:p-20">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
               <div>
-                <div className="text-4xl md:text-5xl font-bold mb-2">500万</div>
-                <div className="text-gray-400 text-sm">最高额度</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2">专业</div>
+                <div className="text-gray-400 text-sm">融资规划团队</div>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-bold mb-2">3.6%</div>
-                <div className="text-gray-400 text-sm">年化利率起</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2">全面</div>
+                <div className="text-gray-400 text-sm">数据评估与分析</div>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-bold mb-2">24h</div>
-                <div className="text-gray-400 text-sm">最快放款</div>
-              </div>
-              <div>
-                <div className="text-4xl md:text-5xl font-bold mb-2">98%</div>
-                <div className="text-gray-400 text-sm">审批通过率</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2">透明</div>
+                <div className="text-gray-400 text-sm">咨询服务流程</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 申请条件 */}
+      {/* 服务适用范围 */}
       <section className="px-6 py-16">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">申请条件</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">服务适用范围</h2>
             <p className="text-gray-500">
-              满足以下基本条件即可申请企业融资
+              符合以下条件的企业可获得我们的融资规划咨询服务
             </p>
           </div>
           <div className="max-w-2xl mx-auto">
@@ -129,6 +126,9 @@ export default function BusinessFinancePage() {
           </div>
         </div>
       </section>
+
+      {/* 合规声明 */}
+      <ComplianceNotice />
     </main>
   );
 }
