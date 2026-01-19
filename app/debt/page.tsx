@@ -38,19 +38,19 @@ const process = [
 
 export default function DebtOptimizationPage() {
   return (
-    <main className="pt-24 pb-20">
+    <main className="pb-20 pt-24">
       {/* Hero 区块 */}
       <section className="px-6 py-16 text-center">
-        <div className="max-w-4xl mx-auto">
-          <span className="inline-block px-4 py-1.5 bg-gray-100 rounded-full text-sm font-medium text-gray-600 mb-6">
+        <div className="mx-auto max-w-4xl">
+          <span className="mb-6 inline-block rounded-full bg-gray-100 px-4 py-1.5 text-sm font-medium text-gray-600">
             债务优化
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="mb-6 text-4xl font-bold md:text-6xl">
             梳理负债
             <br />
             科学规划
           </h1>
-          <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="mx-auto max-w-2xl text-lg font-light leading-relaxed text-gray-500 md:text-xl">
             我们帮助您全面梳理债务结构，测算真实成本，设计合理的还款方案，帮助您逐步恢复健康的财务状况。
           </p>
         </div>
@@ -58,19 +58,19 @@ export default function DebtOptimizationPage() {
 
       {/* 服务优势 */}
       <section className="px-6 py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-gradient-to-br from-gray-900 to-black text-white rounded-[40px] p-12 md:p-20">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+        <div className="mx-auto max-w-7xl">
+          <div className="rounded-[40px] bg-gradient-to-br from-gray-900 to-black p-12 text-white md:p-20">
+            <div className="grid grid-cols-1 gap-12 text-center md:grid-cols-3">
               <div>
-                <div className="text-5xl md:text-6xl font-bold mb-3">科学</div>
+                <div className="mb-3 text-5xl font-bold md:text-6xl">科学</div>
                 <div className="text-gray-400">债务梳理与分析</div>
               </div>
               <div>
-                <div className="text-5xl md:text-6xl font-bold mb-3">专业</div>
+                <div className="mb-3 text-5xl font-bold md:text-6xl">专业</div>
                 <div className="text-gray-400">还款方案设计</div>
               </div>
               <div>
-                <div className="text-5xl md:text-6xl font-bold mb-3">严格</div>
+                <div className="mb-3 text-5xl font-bold md:text-6xl">严格</div>
                 <div className="text-gray-400">隐私保护机制</div>
               </div>
             </div>
@@ -80,24 +80,22 @@ export default function DebtOptimizationPage() {
 
       {/* 服务内容 */}
       <section className="px-6 py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">服务内容</h2>
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">服务内容</h2>
             <p className="text-gray-500">专业团队，为您提供全方位的债务解决方案</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
               <div
                 key={service.title}
-                className="bg-white rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300"
+                className="rounded-3xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:shadow-lg"
               >
-                <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-6">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-gray-50">
                   <span className="text-xl">{service.icon}</span>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {service.description}
-                </p>
+                <h3 className="mb-3 text-xl font-bold">{service.title}</h3>
+                <p className="text-sm leading-relaxed text-gray-500">{service.description}</p>
               </div>
             ))}
           </div>
@@ -105,24 +103,24 @@ export default function DebtOptimizationPage() {
       </section>
 
       {/* 服务流程 */}
-      <section className="px-6 py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">服务流程</h2>
+      <section className="bg-gray-50 px-6 py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">服务流程</h2>
           </div>
-          <div className="max-w-3xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="mx-auto max-w-3xl">
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
               {process.map((item, index) => (
                 <div key={item.step} className="relative text-center">
                   {/* 连接线 */}
                   {index < process.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gray-200" />
+                    <div className="absolute left-1/2 top-8 hidden h-0.5 w-full bg-gray-200 md:block" />
                   )}
                   <div className="relative z-10">
-                    <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                    <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-black text-xl font-bold text-white">
                       {item.step}
                     </div>
-                    <h4 className="font-bold mb-2">{item.title}</h4>
+                    <h4 className="mb-2 font-bold">{item.title}</h4>
                     <p className="text-sm text-gray-500">{item.desc}</p>
                   </div>
                 </div>
@@ -134,10 +132,10 @@ export default function DebtOptimizationPage() {
 
       {/* 常见问题提示 */}
       <section className="px-6 py-16">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="bg-yellow-50 border border-yellow-100 rounded-3xl p-8">
-            <h3 className="text-xl font-bold mb-4">⚠️ 温馨提示</h3>
-            <p className="text-gray-600 leading-relaxed">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="rounded-3xl border border-yellow-100 bg-yellow-50 p-8">
+            <h3 className="mb-4 text-xl font-bold">⚠️ 温馨提示</h3>
+            <p className="leading-relaxed text-gray-600">
               债务优化不是逃避债务，而是通过合法、合规的方式，与债权方协商更合理的还款方案。
               请保持良好的还款意愿，我们将全力协助您走出困境。
             </p>

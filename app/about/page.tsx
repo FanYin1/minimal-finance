@@ -39,19 +39,19 @@ const milestones = [
 
 export default function AboutPage() {
   return (
-    <main className="pt-24 pb-20">
+    <main className="pb-20 pt-24">
       {/* Hero 区块 */}
       <section className="px-6 py-16 text-center">
-        <div className="max-w-4xl mx-auto">
-          <span className="inline-block px-4 py-1.5 bg-gray-100 rounded-full text-sm font-medium text-gray-600 mb-6">
+        <div className="mx-auto max-w-4xl">
+          <span className="mb-6 inline-block rounded-full bg-gray-100 px-4 py-1.5 text-sm font-medium text-gray-600">
             关于我们
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="mb-6 text-4xl font-bold md:text-6xl">
             让资金流动
             <br />
             回归简单
           </h1>
-          <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="mx-auto max-w-2xl text-lg font-light leading-relaxed text-gray-500 md:text-xl">
             浦汇网是专业的贷款信息咨询平台，我们致力于连接资金需求方与优质金融机构，
             为您提供最高效、最适合的金融解决方案。
           </p>
@@ -59,14 +59,12 @@ export default function AboutPage() {
       </section>
 
       {/* 公司介绍 */}
-      <section className="px-6 py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <section className="bg-gray-50 px-6 py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                我们是谁
-              </h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
+              <h2 className="mb-6 text-3xl font-bold md:text-4xl">我们是谁</h2>
+              <div className="space-y-4 leading-relaxed text-gray-600">
                 <p>
                   浦汇网成立于2018年，是一家专注于金融信息咨询服务的科技公司。
                   我们通过整合银行、消费金融公司、信托等多家持牌金融机构资源，
@@ -82,23 +80,23 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="bg-black rounded-3xl p-12 text-white">
+            <div className="rounded-3xl bg-black p-12 text-white">
               <div className="grid grid-cols-2 gap-8">
                 <div>
-                  <div className="text-4xl font-bold mb-2">50+</div>
-                  <div className="text-gray-400 text-sm">合作金融机构</div>
+                  <div className="mb-2 text-4xl font-bold">50+</div>
+                  <div className="text-sm text-gray-400">合作金融机构</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold mb-2">50000+</div>
-                  <div className="text-gray-400 text-sm">服务客户</div>
+                  <div className="mb-2 text-4xl font-bold">50000+</div>
+                  <div className="text-sm text-gray-400">服务客户</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold mb-2">10亿+</div>
-                  <div className="text-gray-400 text-sm">累计放款</div>
+                  <div className="mb-2 text-4xl font-bold">10亿+</div>
+                  <div className="text-sm text-gray-400">累计放款</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold mb-2">98%</div>
-                  <div className="text-gray-400 text-sm">客户满意度</div>
+                  <div className="mb-2 text-4xl font-bold">98%</div>
+                  <div className="text-sm text-gray-400">客户满意度</div>
                 </div>
               </div>
             </div>
@@ -108,24 +106,22 @@ export default function AboutPage() {
 
       {/* 核心价值观 */}
       <section className="px-6 py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">核心价值观</h2>
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">核心价值观</h2>
             <p className="text-gray-500">我们始终坚守的服务理念</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {values.map((value) => (
               <div
                 key={value.title}
-                className="bg-white rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 text-center"
+                className="rounded-3xl border border-gray-100 bg-white p-8 text-center transition-all duration-300 hover:shadow-lg"
               >
-                <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gray-50">
                   <span className="text-2xl">{value.icon}</span>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {value.description}
-                </p>
+                <h3 className="mb-3 text-xl font-bold">{value.title}</h3>
+                <p className="text-sm leading-relaxed text-gray-500">{value.description}</p>
               </div>
             ))}
           </div>
@@ -133,22 +129,19 @@ export default function AboutPage() {
       </section>
 
       {/* 发展历程 */}
-      <section className="px-6 py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">发展历程</h2>
+      <section className="bg-gray-50 px-6 py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">发展历程</h2>
           </div>
-          <div className="max-w-3xl mx-auto">
+          <div className="mx-auto max-w-3xl">
             <div className="space-y-6">
               {milestones.map((item, index) => (
-                <div
-                  key={item.year}
-                  className="flex items-center gap-6 p-4 bg-white rounded-2xl"
-                >
-                  <div className="w-20 h-20 bg-black text-white rounded-2xl flex items-center justify-center flex-shrink-0">
+                <div key={item.year} className="flex items-center gap-6 rounded-2xl bg-white p-4">
+                  <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-2xl bg-black text-white">
                     <span className="text-xl font-bold">{item.year}</span>
                   </div>
-                  <p className="text-gray-700 text-lg">{item.event}</p>
+                  <p className="text-lg text-gray-700">{item.event}</p>
                 </div>
               ))}
             </div>

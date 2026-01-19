@@ -32,33 +32,33 @@ export function Header() {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          isScrolled
-            ? 'bg-white/80 backdrop-blur-md shadow-sm'
-            : 'bg-white/80 backdrop-blur-md'
+          'fixed left-0 right-0 top-0 z-50 transition-all duration-300',
+          isScrolled ? 'bg-white/80 shadow-sm backdrop-blur-md' : 'bg-white/80 backdrop-blur-md'
         )}
       >
-        <nav className="max-w-7xl mx-auto px-6">
-          <div className={cn(
-            "flex items-center justify-between transition-all duration-300",
-            isScrolled ? "h-16" : "h-20"
-          )}>
+        <nav className="mx-auto max-w-7xl px-6">
+          <div
+            className={cn(
+              'flex items-center justify-between transition-all duration-300',
+              isScrolled ? 'h-16' : 'h-20'
+            )}
+          >
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-6 h-6 bg-black rounded-full" />
+              <div className="h-6 w-6 rounded-full bg-black" />
               <span className="text-lg font-bold tracking-tight">浦汇咨询</span>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-10">
+            <div className="hidden items-center space-x-10 md:flex">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="relative text-sm font-medium text-gray-600 hover:text-black transition-colors duration-300 group"
+                  className="group relative text-sm font-medium text-gray-600 transition-colors duration-300 hover:text-black"
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-black transition-all duration-300 group-hover:w-full" />
                 </Link>
               ))}
             </div>
@@ -67,7 +67,7 @@ export function Header() {
             <div className="hidden md:block">
               <button
                 onClick={() => setIsConsultOpen(true)}
-                className="text-sm font-medium text-gray-900 hover:text-black transition-colors"
+                className="text-sm font-medium text-gray-900 transition-colors hover:text-black"
               >
                 立刻咨询
               </button>
@@ -75,31 +75,27 @@ export function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2"
+              className="p-2 md:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
 
           {/* Mobile Menu */}
           <div
             className={cn(
-              'md:hidden transition-all duration-300 overflow-hidden',
+              'overflow-hidden transition-all duration-300 md:hidden',
               isMobileMenuOpen ? 'max-h-96 pb-4' : 'max-h-0'
             )}
           >
-            <div className="flex flex-col space-y-2 pt-4 border-t border-gray-100">
+            <div className="flex flex-col space-y-2 border-t border-gray-100 pt-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                  className="rounded-lg px-4 py-2 text-gray-700 transition-colors hover:bg-gray-50"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -110,7 +106,7 @@ export function Header() {
                   setIsMobileMenuOpen(false);
                   setIsConsultOpen(true);
                 }}
-                className="mx-4 mt-2 text-center py-2 bg-black text-white rounded-full font-medium"
+                className="mx-4 mt-2 rounded-full bg-black py-2 text-center font-medium text-white"
               >
                 立刻咨询
               </button>
@@ -120,10 +116,7 @@ export function Header() {
       </header>
 
       {/* 咨询弹窗 */}
-      <ConsultModal
-        isOpen={isConsultOpen}
-        onClose={() => setIsConsultOpen(false)}
-      />
+      <ConsultModal isOpen={isConsultOpen} onClose={() => setIsConsultOpen(false)} />
     </>
   );
 }

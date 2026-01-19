@@ -13,14 +13,7 @@ interface ModalProps {
   className?: string;
 }
 
-export function Modal({
-  isOpen,
-  onClose,
-  title,
-  children,
-  size = 'md',
-  className,
-}: ModalProps) {
+export function Modal({ isOpen, onClose, title, children, size = 'md', className }: ModalProps) {
   // 处理 ESC 键关闭
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -56,28 +49,28 @@ export function Modal({
     <div className="fixed inset-0 z-[100] flex items-center justify-center">
       {/* 背景遮罩 */}
       <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fade-in"
+        className="absolute inset-0 animate-fade-in bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       />
 
       {/* 弹窗内容 */}
       <div
         className={cn(
-          'relative w-full mx-4 bg-white rounded-3xl shadow-2xl animate-scale-in',
+          'animate-scale-in relative mx-4 w-full rounded-3xl bg-white shadow-2xl',
           sizeClasses[size],
           className
         )}
       >
         {/* 头部 */}
         {title && (
-          <div className="flex items-center justify-between px-8 pt-8 pb-4">
+          <div className="flex items-center justify-between px-8 pb-4 pt-8">
             <h3 className="text-2xl font-bold">{title}</h3>
             <button
               onClick={onClose}
-              className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+              className="rounded-full p-2 transition-colors hover:bg-gray-100"
               aria-label="关闭"
             >
-              <X className="w-5 h-5" />
+              <X className="h-5 w-5" />
             </button>
           </div>
         )}
@@ -86,10 +79,10 @@ export function Modal({
         {!title && (
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors z-10"
+            className="absolute right-4 top-4 z-10 rounded-full p-2 transition-colors hover:bg-gray-100"
             aria-label="关闭"
           >
-            <X className="w-5 h-5" />
+            <X className="h-5 w-5" />
           </button>
         )}
 

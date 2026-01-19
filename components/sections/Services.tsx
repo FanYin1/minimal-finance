@@ -24,31 +24,29 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section id="services" className="px-6 py-20">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {services.map((service) => (
             <div key={service.title} className="minimal-card group">
               {/* 图标 */}
-              <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-8 group-hover:bg-black transition-colors duration-500">
-                <span className="text-xl group-hover:grayscale group-hover:brightness-200">
+              <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-full bg-gray-50 transition-colors duration-500 group-hover:bg-black">
+                <span className="text-xl group-hover:brightness-200 group-hover:grayscale">
                   {service.icon}
                 </span>
               </div>
 
               {/* 标题 */}
-              <h2 className="text-2xl font-bold mb-4">{service.title}</h2>
+              <h2 className="mb-4 text-2xl font-bold">{service.title}</h2>
 
               {/* 描述 */}
-              <p className="text-gray-500 leading-relaxed mb-8 font-light">
-                {service.description}
-              </p>
+              <p className="mb-8 font-light leading-relaxed text-gray-500">{service.description}</p>
 
               {/* 底部高亮 */}
               <div className="border-t border-gray-100 pt-6">
-                <div className="flex justify-between items-center text-sm">
+                <div className="flex items-center justify-between text-sm">
                   <span className="text-gray-400">{service.highlight.label}</span>
-                  <span className="font-bold text-lg">{service.highlight.value}</span>
+                  <span className="text-lg font-bold">{service.highlight.value}</span>
                 </div>
               </div>
             </div>

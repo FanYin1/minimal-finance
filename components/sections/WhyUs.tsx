@@ -12,19 +12,17 @@ const stats = [
 
 export function WhyUs() {
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="bg-black text-white rounded-[40px] p-12 md:p-24 relative overflow-hidden">
+    <section className="px-6 py-20">
+      <div className="mx-auto max-w-7xl">
+        <div className="relative overflow-hidden rounded-[40px] bg-black p-12 text-white md:p-24">
           {/* 抽象圆形装饰 */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gray-800 rounded-full blur-[100px] -mr-32 -mt-32 opacity-50" />
+          <div className="absolute right-0 top-0 -mr-32 -mt-32 h-[500px] w-[500px] rounded-full bg-gray-800 opacity-50 blur-[100px]" />
 
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="relative z-10 grid grid-cols-1 items-center gap-16 md:grid-cols-2">
             {/* 左侧内容 */}
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                为什么选择我们？
-              </h2>
-              <p className="text-gray-400 text-lg leading-relaxed mb-10 font-light">
+              <h2 className="mb-6 text-4xl font-bold md:text-5xl">为什么选择我们？</h2>
+              <p className="mb-10 text-lg font-light leading-relaxed text-gray-400">
                 在复杂的金融市场中，我们提供专业的信息咨询服务，帮助您理清资金需求与债务结构，看懂金融产品的真实成本，做出更明智的决策。
               </p>
 
@@ -32,8 +30,8 @@ export function WhyUs() {
               <ul className="space-y-6">
                 {highlights.map((item) => (
                   <li key={item} className="flex items-center gap-4">
-                    <div className="w-6 h-6 rounded-full border border-gray-600 flex items-center justify-center flex-shrink-0">
-                      <div className="w-2 h-2 bg-white rounded-full" />
+                    <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-gray-600">
+                      <div className="h-2 w-2 rounded-full bg-white" />
                     </div>
                     <span className="text-lg">{item}</span>
                   </li>
@@ -46,12 +44,12 @@ export function WhyUs() {
               {stats.map((stat, index) => (
                 <div
                   key={stat.label}
-                  className={`bg-gray-900 p-8 rounded-3xl border border-gray-800 ${
+                  className={`rounded-3xl border border-gray-800 bg-gray-900 p-8 ${
                     stat.colSpan ? 'col-span-2' : ''
                   }`}
                 >
-                  <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                  <div className="text-gray-500 text-sm">{stat.label}</div>
+                  <div className="mb-2 text-4xl font-bold">{stat.value}</div>
+                  <div className="text-sm text-gray-500">{stat.label}</div>
                 </div>
               ))}
             </div>

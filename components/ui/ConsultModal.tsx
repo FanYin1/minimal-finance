@@ -83,10 +83,10 @@ export function ConsultModal({ isOpen, onClose }: ConsultModalProps) {
   if (submitSuccess) {
     return (
       <Modal isOpen={isOpen} onClose={handleClose} size="md">
-        <div className="text-center py-8">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <div className="py-8 text-center">
+          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
             <svg
-              className="w-8 h-8 text-green-600"
+              className="h-8 w-8 text-green-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -99,7 +99,7 @@ export function ConsultModal({ isOpen, onClose }: ConsultModalProps) {
               />
             </svg>
           </div>
-          <h3 className="text-2xl font-bold mb-2">提交成功</h3>
+          <h3 className="mb-2 text-2xl font-bold">提交成功</h3>
           <p className="text-gray-500">我们的专属顾问将在24小时内与您联系</p>
         </div>
       </Modal>
@@ -111,61 +111,47 @@ export function ConsultModal({ isOpen, onClose }: ConsultModalProps) {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* 姓名 */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            姓名
-          </label>
+          <label className="mb-2 block text-sm font-medium text-gray-700">姓名</label>
           <input
             type="text"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="请输入您的姓名"
             className={cn(
-              'w-full px-4 py-3 border rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-black/5',
+              'w-full rounded-xl border px-4 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-black/5',
               errors.name ? 'border-red-500' : 'border-gray-200 focus:border-black'
             )}
           />
-          {errors.name && (
-            <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-          )}
+          {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
         </div>
 
         {/* 手机号 */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            手机号
-          </label>
+          <label className="mb-2 block text-sm font-medium text-gray-700">手机号</label>
           <input
             type="tel"
             value={formData.phone}
-            onChange={(e) =>
-              setFormData({ ...formData, phone: e.target.value })
-            }
+            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             placeholder="请输入您的手机号"
             className={cn(
-              'w-full px-4 py-3 border rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-black/5',
+              'w-full rounded-xl border px-4 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-black/5',
               errors.phone ? 'border-red-500' : 'border-gray-200 focus:border-black'
             )}
           />
-          {errors.phone && (
-            <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-          )}
+          {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
         </div>
 
         {/* 咨询内容 */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            咨询内容
-          </label>
+          <label className="mb-2 block text-sm font-medium text-gray-700">咨询内容</label>
           <div className="grid grid-cols-3 gap-3">
             {consultTypes.map((type) => (
               <button
                 key={type.value}
                 type="button"
-                onClick={() =>
-                  setFormData({ ...formData, consultType: type.value })
-                }
+                onClick={() => setFormData({ ...formData, consultType: type.value })}
                 className={cn(
-                  'py-3 px-4 border rounded-xl text-sm font-medium transition-all',
+                  'rounded-xl border px-4 py-3 text-sm font-medium transition-all',
                   formData.consultType === type.value
                     ? 'border-black bg-black text-white'
                     : 'border-gray-200 hover:border-gray-400'
@@ -175,28 +161,24 @@ export function ConsultModal({ isOpen, onClose }: ConsultModalProps) {
               </button>
             ))}
           </div>
-          {errors.consultType && (
-            <p className="text-red-500 text-sm mt-1">{errors.consultType}</p>
-          )}
+          {errors.consultType && <p className="mt-1 text-sm text-red-500">{errors.consultType}</p>}
         </div>
 
         {/* 同意条款 */}
         <div>
-          <label className="flex items-start gap-3 cursor-pointer">
+          <label className="flex cursor-pointer items-start gap-3">
             <input
               type="checkbox"
               checked={formData.agreed}
-              onChange={(e) =>
-                setFormData({ ...formData, agreed: e.target.checked })
-              }
-              className="mt-1 w-4 h-4 rounded border-gray-300 text-black focus:ring-black"
+              onChange={(e) => setFormData({ ...formData, agreed: e.target.checked })}
+              className="mt-1 h-4 w-4 rounded border-gray-300 text-black focus:ring-black"
             />
-            <span className="text-sm text-gray-600 leading-relaxed">
+            <span className="text-sm leading-relaxed text-gray-600">
               我已阅读并同意
               <a
                 href="/privacy"
                 target="_blank"
-                className="text-black font-medium hover:underline mx-1"
+                className="mx-1 font-medium text-black hover:underline"
               >
                 《隐私条例》
               </a>
@@ -204,15 +186,13 @@ export function ConsultModal({ isOpen, onClose }: ConsultModalProps) {
               <a
                 href="/terms"
                 target="_blank"
-                className="text-black font-medium hover:underline mx-1"
+                className="mx-1 font-medium text-black hover:underline"
               >
                 《服务条款》
               </a>
             </span>
           </label>
-          {errors.agreed && (
-            <p className="text-red-500 text-sm mt-1">{errors.agreed}</p>
-          )}
+          {errors.agreed && <p className="mt-1 text-sm text-red-500">{errors.agreed}</p>}
         </div>
 
         {/* 提交按钮 */}
@@ -220,10 +200,10 @@ export function ConsultModal({ isOpen, onClose }: ConsultModalProps) {
           type="submit"
           disabled={isSubmitting}
           className={cn(
-            'w-full py-4 bg-black text-white rounded-full font-medium transition-all',
+            'w-full rounded-full bg-black py-4 font-medium text-white transition-all',
             isSubmitting
-              ? 'opacity-50 cursor-not-allowed'
-              : 'hover:bg-gray-900 hover:scale-[1.02] hover:shadow-lg'
+              ? 'cursor-not-allowed opacity-50'
+              : 'hover:scale-[1.02] hover:bg-gray-900 hover:shadow-lg'
           )}
         >
           {isSubmitting ? '提交中...' : '提交咨询'}

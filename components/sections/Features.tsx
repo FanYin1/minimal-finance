@@ -41,11 +41,11 @@ const features = [
 
 export function Features() {
   return (
-    <section className="py-20 lg:py-32 bg-gray-50">
+    <section className="bg-gray-50 py-20 lg:py-32">
       <div className="container-custom">
         {/* 标题区 */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <span className="text-sm font-semibold uppercase tracking-wider text-primary-600">
             我们的优势
           </span>
           <h2 className="section-title mt-4">
@@ -57,29 +57,25 @@ export function Features() {
         </div>
 
         {/* 特性卡片网格 */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="card group hover:shadow-xl transition-all duration-300"
+              className="card group transition-all duration-300 hover:shadow-xl"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* 图标 */}
               <div
-                className={`w-14 h-14 rounded-xl ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                className={`h-14 w-14 rounded-xl ${feature.color} mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}
               >
-                <feature.icon className="w-7 h-7" />
+                <feature.icon className="h-7 w-7" />
               </div>
 
               {/* 标题 */}
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                {feature.title}
-              </h3>
+              <h3 className="mb-3 text-xl font-bold text-gray-900">{feature.title}</h3>
 
               {/* 描述 */}
-              <p className="text-gray-600 leading-relaxed">
-                {feature.description}
-              </p>
+              <p className="leading-relaxed text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>

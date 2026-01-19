@@ -47,7 +47,7 @@ function getErrorMessage(error: AxiosError): string {
     // 服务器返回错误
     const status = error.response.status;
     const data = error.response.data as { message?: string };
-    
+
     switch (status) {
       case 400:
         return data.message || '请求参数错误';

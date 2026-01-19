@@ -48,26 +48,22 @@ export function ProcessModal({ isOpen, onClose }: ProcessModalProps) {
           <div key={item.step} className="relative">
             {/* 连接线 */}
             {index < processSteps.length - 1 && (
-              <div className="absolute left-6 top-14 w-0.5 h-8 bg-gray-200" />
+              <div className="absolute left-6 top-14 h-8 w-0.5 bg-gray-200" />
             )}
 
-            <div className="flex items-start gap-5 p-4 rounded-2xl hover:bg-gray-50 transition-colors">
+            <div className="flex items-start gap-5 rounded-2xl p-4 transition-colors hover:bg-gray-50">
               {/* 图标 */}
-              <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gray-100">
                 <span className="text-xl">{item.icon}</span>
               </div>
 
               {/* 内容 */}
               <div className="flex-1 pt-1">
-                <div className="flex items-center gap-3 mb-1">
-                  <span className="text-xs font-medium text-gray-400">
-                    STEP {item.step}
-                  </span>
-                  <h4 className="font-bold text-lg">{item.title}</h4>
+                <div className="mb-1 flex items-center gap-3">
+                  <span className="text-xs font-medium text-gray-400">STEP {item.step}</span>
+                  <h4 className="text-lg font-bold">{item.title}</h4>
                 </div>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {item.description}
-                </p>
+                <p className="text-sm leading-relaxed text-gray-500">{item.description}</p>
               </div>
             </div>
           </div>
@@ -75,10 +71,8 @@ export function ProcessModal({ isOpen, onClose }: ProcessModalProps) {
       </div>
 
       {/* 底部提示 */}
-      <div className="mt-6 p-4 bg-gray-50 rounded-2xl text-center">
-        <p className="text-sm text-gray-500">
-          全程透明，不成功不收费
-        </p>
+      <div className="mt-6 rounded-2xl bg-gray-50 p-4 text-center">
+        <p className="text-sm text-gray-500">全程透明，不成功不收费</p>
       </div>
     </Modal>
   );
